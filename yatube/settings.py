@@ -1,4 +1,5 @@
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e_*j&-9sw21t&s-bqbnr!qn%bjf+ctk4j0t4*((b!wo(vjzpd('
 DEBUG = True
@@ -27,7 +28,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'yatube.urls'
 
-TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
