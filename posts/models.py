@@ -25,13 +25,16 @@ class Post(models.Model):
     group = models.ForeignKey(
         Group,
         on_delete=models.SET_NULL,
-        related_name='where_post_from',
+        related_name='post',
         blank=True,
         null=True)
 
-    def __str__(self):
-        return f'У {self.author} новый пост в {self.group}'
-
     class Meta:
         ordering = ['pub_date']
-    
+
+    def __str__(self):
+        if self.group is not None:
+            responce = f'У {self.author} новый пост в {self.group}'
+        else:
+            responce = f'У {self.author} новый пост'
+        return responce
